@@ -1,0 +1,240 @@
+/* Фоны */
+$bg-color: #1d1d1d;
+$bg-bottom-color: #0d0d0d;
+$bg-input-color: #323232;
+
+/* Цвет текста */
+$headers-color: #ffffff;
+$text-color: #d3d3d3;
+$logo-color: #ff6400;
+$input-color: #696969;
+$input-button-color: #d0d0d0;
+$bottom-menu-color: #9b9b9b;
+$copy-color: #c3c3c3;
+$copy-title-color: #ffffff;
+/* Рамки */
+$input-border-color: #464646;
+$input-focus-border-color: #8e8e8e;
+$submit-button-border-color: #636363;
+
+
+
+/* Размеры */
+$content-width: 1146px;
+
+/* Для формирования контента */
+.content-area {
+    width: 1146px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+@mixin make-input-font() {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18pt;
+    color: $input-color;
+    font-weight: 400;
+}
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    
+}
+/* 1146px - контент */
+/* 362px - размер инпутов */
+
+.footer-container {
+    padding-top: 90px;
+    background-color: $bg-color;
+    height: 556px;
+    position: relative;
+    &__content {
+        @extend .content-area;
+    }
+
+    &__header {
+        margin-bottom: 55px;
+    }
+
+    &__header-text {
+        margin: 0;
+        font-size: 26pt;
+        font-weight: 700;
+        font-family: 'Raleway', sans-serif;
+        color: $headers-color;
+    }
+
+}
+
+
+
+/* Форма в футере */
+.vm-form {
+    
+    width: 362px;
+    &__input-container {
+        margin-bottom: 10px;
+        &_more-margin {
+            margin-bottom: 15px;
+        }
+    }
+
+
+    &__input {
+
+        width: 320px;
+        background-color: $bg-input-color;
+        border: $input-border-color;
+        outline: none;
+        height: 50px;
+        padding: 0 20px;
+        border: 1px solid $input-border-color;
+        @include make-input-font();
+        
+        &:focus {
+            border: 1px solid $input-focus-border-color;
+        }
+
+        &::-webkit-input-placeholder{
+            @include make-input-font();
+        }
+        &::-moz-placeholder {
+            @include make-input-font();
+        }
+
+    }
+
+
+    &__textarea {
+        width: 320px;
+        background-color: $bg-input-color;
+        border: $input-border-color;
+        outline: none;
+        height: 170px;
+        padding: 20px;
+        border: 1px solid $input-border-color;
+        @include make-input-font();
+        resize: none;
+        &:focus {
+            border: 1px solid $input-focus-border-color;
+        }
+
+        &::-webkit-input-placeholder{
+            @include make-input-font();
+        }
+        &::-moz-placeholder {
+            @include make-input-font();
+        }
+
+    }
+
+
+    &__buttons {
+        text-align: right;
+    }
+    &__button {
+        background-color: $bg-input-color;
+        border: 1px solid $submit-button-border-color;
+        color: $input-button-color;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 18pt;
+        padding: 15px 60px;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+}
+
+
+
+.bottom-container {
+    background-color: $bg-bottom-color;
+    height: 72px;
+    position: relative;
+    &__content {
+        @extend .content-area;
+    }
+}
+
+
+
+.copyright {
+    color: $copy-color;
+    float: left;
+    line-height: 70px;
+    font-family: 'Open Sans', sans-serif;
+    &__text {
+        margin: 0;
+        font-weight: 400;
+    }
+    &__title {
+        font-weight: 600;
+        color: $copy-title-color;
+    }
+}
+
+
+.bottom-menu {
+    float: right;
+    line-height: 70px;
+    &__links-area {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        float: left;
+        margin-right: 18px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    &__link {
+        color: $bottom-menu-color;
+        text-decoration: none;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 14pt;
+    }
+
+}
+
+.footer-menu {
+    &__left {
+        
+    }
+
+    &__right {
+
+    }
+}
+
+
+.row {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.col-4 {
+    float: left;
+    padding-left: 15px;
+    width: 1146 / 12 * 4px - 15px;
+}
+

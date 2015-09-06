@@ -1,0 +1,25 @@
+{
+  "name": "test-adaptive",
+  "version": "1.0.0",
+  "description": "Test task",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bitveen/testAdaptive.git"
+  },
+  "author": "Bitveen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bitveen/testAdaptive/issues"
+  },
+  "homepage": "https://github.com/Bitveen/testAdaptive#readme"
+}
