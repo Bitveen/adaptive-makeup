@@ -1,183 +1,123 @@
-/* Фоны */
-$bg-color: #1d1d1d;
-$bg-bottom-color: #0d0d0d;
-$bg-input-color: #323232;
-
-/* Цвет текста */
-$headers-color: #ffffff;
-$text-color: #d3d3d3;
-$logo-color: #ff6400;
-$input-color: #696969;
-$input-button-color: #d0d0d0;
-$bottom-menu-color: #9b9b9b;
-$copy-color: #c3c3c3;
-$copy-title-color: #ffffff;
-$footer-menu-link-color: #ffffff;
-$contacts-color: #ffffff;
+@import "settings";
+@import "mixins";
 
 
-/* Рамки */
-$input-border-color: #464646;
-$input-focus-border-color: #8e8e8e;
-$submit-button-border-color: #636363;
-
-
-
-/* Размеры */
-$content-width: 1146px;
-
-/* 1146px - контент */
-/* 362px - размер инпутов */
-
-
-
-.clear {
-    clear: both;
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
 }
+
 .row {
-    &:after {
-        content: '';
-        display: block;
-        clear: both;
-    }
+    @include clearfix();
 }
+
+/* Колонки */
 .col {
-    
-    @media only screen and (max-width: 1200px) {
+
+    @media screen and (min-width: 1200px) {
         float: left;
-        padding-left: 28px;
-        width: 1146 / 12 * 4px - 28px;
         margin-top: 0;
         padding-bottom: 0;
+        width: 364px;
+        padding-left: 28px;
+
+        &:first-child {
+            padding-left: 0;
+        }
     }
 
-    @media only screen and (max-width: 600px) {
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        float: left;
+        margin-top: 0;
+        padding-bottom: 0;
+        width: 50%;
+        padding-left: 0;
+        margin-bottom: 80px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
         float: none;
         padding-left: 0;
         width: 100%;
-        margin-top: 50px;
+        margin-top: 30px;
+        margin-bottom: 0;
         padding-bottom: 50px;
     }
-    
-
-}
-
-@media only screen and (max-width: 1200px) {
-
-    .footer-container {
-        height: 556px;
-    }
-
-    .copyright {
-        float: left;
-        line-height: 70px;
-    }
-    .bottom-menu {
-        float: right;
-        line-height: 70px;
-    }
-    .footer-menu {
-        width: 312px;
-    }
-
-
 
 
 }
-@media only screen and (max-width: 600px) {
-
-
-    .footer-container {
-        padding-left: 15px;
-        padding-right: 15px;
-        height: auto;
-    }
-
-
-    .copyright {
-        line-height: normal;
-        text-align: center;
-        float: none;
-        clear: both;
-    }
-    .bottom-menu {
-        margin-bottom: 15px;
-        float: none;
-        line-height: normal;
-        text-align: center;
-
-    }
-    .vm-form {
-        margin: 0 auto;
-    }
-    .footer-container__header-text {
-        text-align: center;
-    }
-    .footer-container__logo {
-        margin: 0 auto;
-    }
-    .footer-menu {
-        margin: 0 auto;
-    }
-    .info__contact {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
-}
-
-
-
-
-
 
 
 .content-area {
     margin: 0 auto;
-    width: 1146px;
-    padding-top: 90px;
     position: relative;
-    /* height: 100%; */
-    @media only screen and (max-width: 1200px) {
-        width: 1146px;
-        padding-top: 90px;
+
+    @media screen and (min-width: 1200px) {
+        width: $content-original-width;
+        padding-top: 0;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    @media screen and (max-width: 600px) {
         width: 100%;
         padding-top: 30px;
     }
 
 }
 
-@mixin make-input-font() {
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-    color: $input-color;
-    font-weight: 400;
-}
 
-
-
-body {
-    padding: 0;
-    margin: 0;
-}
-
-.container {}
-
-
+/* Контейнер для трех блоков: контакты, меню, форма */
 .footer-container {
     
     background-color: $bg-color;
     position: relative;
+
+    @media screen and (min-width: 600px) {
+        height: $footer-original-height;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 90px;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        height: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 30px;
+        height: auto;
+    }
+
     &__content {
         @extend .content-area;
     }
 
     &__header {
         margin-bottom: 55px;
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            text-align: center;
+        }
+
+
     }
 
     &__header-text {
@@ -186,21 +126,65 @@ body {
         font-weight: 700;
         font-family: 'Raleway', sans-serif;
         color: $headers-color;
+
+
+        @media screen and (min-width: 1200px) {
+            text-align: left;
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            text-align: center;
+        }
+
     }
+
     &__logo {
         width: 168px;
         height: 41px;
-        background: url('../imgs/logo.png') no-repeat center center;
+        background: url('../images/logo.png') no-repeat center center;
+
+        @media screen and (min-width: 1200px) {
+            margin: 0;
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 600px) {
+            margin: 0 auto;
+        }
+
+
     }
 
 }
 
 
 
-/* Форма в футере */
-.vm-form {
+/* Блок с формой */
+.contact-form {
     
-    width: 362px;
+    width: $form-width;
+
+    @media screen and (min-width: 1200px) {
+        margin: 0;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        margin: 0 auto;
+
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 0 auto;
+    }
+
+
     &__input-container {
         margin-bottom: 10px;
         &_more-margin {
@@ -210,50 +194,22 @@ body {
 
 
     &__input {
+        @include make-input();
+        @include make-input-font();
 
-        width: 320px;
-        background-color: $bg-input-color;
-        border: $input-border-color;
-        outline: none;
         height: 50px;
         padding: 0 20px;
-        border: 1px solid $input-border-color;
-        @include make-input-font();
-        
-        &:focus {
-            border: 1px solid $input-focus-border-color;
-        }
-
-        &::-webkit-input-placeholder{
-            @include make-input-font();
-        }
-        &::-moz-placeholder {
-            @include make-input-font();
-        }
 
     }
 
 
     &__textarea {
-        width: 320px;
-        background-color: $bg-input-color;
-        border: $input-border-color;
-        outline: none;
+        @include make-input();
+        @include make-input-font();
+
         height: 170px;
         padding: 20px;
-        border: 1px solid $input-border-color;
-        @include make-input-font();
         resize: none;
-        &:focus {
-            border: 1px solid $input-focus-border-color;
-        }
-
-        &::-webkit-input-placeholder{
-            @include make-input-font();
-        }
-        &::-moz-placeholder {
-            @include make-input-font();
-        }
 
     }
 
@@ -261,6 +217,7 @@ body {
     &__buttons {
         text-align: right;
     }
+
     &__button {
         background-color: $bg-input-color;
         border: 1px solid $submit-button-border-color;
@@ -280,28 +237,176 @@ body {
 
 
 
+
+
+
+
+
+/* Блок с меню */
+.footer-menu {
+
+    @include clearfix();
+
+    @media screen and (min-width: 1200px) {
+        width: 312px;
+        margin: 0;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        width: 312px;
+        margin: 0 auto;
+
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 312px;
+        margin: 0 auto;
+    }
+
+    &__left {
+        float: left;
+    }
+
+    &__right {
+        margin-left: 100px; 
+        float: left;
+    }
+
+
+    &__items-area {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $footer-menu-link-color;
+
+    }
+}
+
+
+/* Блок с контактной информацией */
+.contact-info {
+    &__text {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        margin: 0;
+        color: $text-color;
+
+        @media screen and (min-width: 1200px) {
+            text-align: left;
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            text-align: center;
+        }
+
+    }
+
+    &__contact-list {
+        margin-top: 35px;
+        @include clearfix();
+    }
+
+    &__contact {
+        width: 350px;
+        margin-bottom: 20px;
+        position: relative;
+
+        @include clearfix();
+
+        @media screen and (min-width: 1200px) {
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+    }
+
+    &__contact-icon {
+        position: relative;
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        &_pin {
+            top: 6px;
+            background: url('../images/icons.png') no-repeat 0px -2px;
+        }
+        &_phone {
+            background: url('../images/icons.png') no-repeat -1px -64px;
+        }
+        &_email {
+            height: 23px;
+            background: url('../images/icons.png') no-repeat 0 -37px;
+        }
+    }
+    &__contact-text {
+        position: relative;
+        float: left;
+        width: 300px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: $contacts-color;
+        &_phone {
+            top: 3px;
+        }
+    }
+
+}
+
+
+/* Нижний контейнер с меню и копирайтом */
 .bottom-container {
     background-color: $bg-bottom-color;
     position: relative;
     &__content {
         @extend .content-area;
-        &:after {
-            content: '';
-            display: block;
-            clear: both;
+        @media screen and (min-width: 1200px) {
+            height: 72px;
+            padding-bottom: 0;
+            padding-top: 0;
         }
-    }
-    @media only screen and (max-width: 1200px) {
-        height: 72px;
-        padding-bottom: 0;
-    }
 
-    @media only screen and (max-width: 600px) {
-        height: auto;
-        padding-bottom: 30px;
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            height: auto;
+            padding-bottom: 30px;
+        }
+
+        @media screen and (max-width: 600px) {
+            height: auto;
+            padding-bottom: 30px;
+        }
+
+        @include clearfix();
     }
-
-
 }
 
 
@@ -309,20 +414,73 @@ body {
 .copyright {
     color: $copy-color;
     font-family: 'Open Sans', sans-serif;
+
+    @media screen and (min-width: 1200px) {
+        float: left;
+        text-align: left;
+        line-height: 70px;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        text-align: center;
+        float: none;
+        line-height: normal;
+    }
+
+    @media screen and (max-width: 600px)  {
+        text-align: center;
+        float: none;
+        line-height: normal;
+    }
+
+
     &__text {
         font-size: 14px;
         margin: 0;
         font-weight: 400;
     }
+
     &__title {
         font-weight: 600;
         color: $copy-title-color;
     }
+
+
+
 }
 
 
+
+/* Самое нижнее меню */
 .bottom-menu {
-    
+
+    @media screen and (min-width: 1200px) {
+        float: right;
+        margin-bottom: 0;
+        text-align: left;
+        position: relative;
+        top: 26px;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+        margin-bottom: 15px;
+        float: none;
+        line-height: normal;
+        text-align: center;
+        position: static;
+        top: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin-bottom: 15px;
+        float: none;
+        line-height: normal;
+        text-align: center;
+        position: static;
+        top: 0;
+    }
+
+
     &__links-area {
         list-style: none;
         padding: 0;
@@ -348,95 +506,6 @@ body {
     }
 
 }
-
-.footer-menu {
-    &__left {
-        float: left;
-    }
-
-    &__right {
-        margin-left: 100px; 
-        float: left;
-    }
-
-
-    &__items-area {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-    &__item {
-        margin-bottom: 20px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    &__link {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        text-decoration: none;
-        color: $footer-menu-link-color;
-
-    }
-}
-
-
-.info {
-    &__text {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400;
-        font-size: 18px;
-        margin: 0;
-        color: $text-color;
-    }
-
-    &__contact-list {
-        margin-top: 35px;
-    }
-    &__contact {
-        width: 350px;
-        margin-bottom: 20px;
-        position: relative;
-
-    }
-
-    &__contact-icon {
-        position: relative;
-        float: left;
-        width: 30px;
-        height: 30px;
-        margin-right: 20px;
-        &_pin {
-            top: 6px;
-            background: url('../imgs/icons.png') no-repeat 0px -2px;
-        }
-        &_phone {
-            
-            background: url('../imgs/icons.png') no-repeat -1px -64px;
-        }
-        &_email {
-            height: 23px;
-            background: url('../imgs/icons.png') no-repeat 0 -37px;
-        }
-    }
-    &__contact-text {
-        position: relative;
-        float: left;
-        width: 300px;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        color: $contacts-color;
-        &_phone {
-            top: 3px;
-        }
-    }
-
-}
-
-
 
 
 
