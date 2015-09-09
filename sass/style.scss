@@ -1,7 +1,6 @@
 @import "settings";
 @import "mixins";
 
-
 body {
     padding: 0;
     margin: 0;
@@ -82,15 +81,15 @@ body {
 
 /* Контейнер для трех блоков: контакты, меню, форма */
 .footer-container {
-    
     background-color: $bg-color;
     position: relative;
+    padding-top: 90px;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 1200px) {
         height: $footer-original-height;
         padding-left: 0;
         padding-right: 0;
-        padding-top: 90px;
+
     }
 
     @media screen and (min-width: 600px) and (max-width: 1200px) {
@@ -102,7 +101,6 @@ body {
     @media screen and (max-width: 600px) {
         padding-left: 15px;
         padding-right: 15px;
-        padding-top: 30px;
         height: auto;
     }
 
@@ -111,7 +109,7 @@ body {
     }
 
     &__header {
-        margin-bottom: 55px;
+        margin-bottom: 50px;
 
         @media screen and (min-width: 600px) and (max-width: 1200px) {
             text-align: center;
@@ -189,7 +187,9 @@ body {
         margin-bottom: 10px;
         &_more-margin {
             margin-bottom: 15px;
+            height: 172px;
         }
+
     }
 
 
@@ -197,8 +197,9 @@ body {
         @include make-input();
         @include make-input-font();
 
-        height: 50px;
-        padding: 0 20px;
+        height: 18px;
+        padding: 15px 20px;
+
 
     }
 
@@ -206,9 +207,9 @@ body {
     &__textarea {
         @include make-input();
         @include make-input-font();
-
-        height: 170px;
-        padding: 20px;
+        width: 318px;
+        height: 130px;
+        padding: 20px 22px;
         resize: none;
 
     }
@@ -219,13 +220,15 @@ body {
     }
 
     &__button {
+        font-family: 'Raleway', sans-serif;
+
         background-color: $bg-input-color;
         border: 1px solid $submit-button-border-color;
         color: $input-button-color;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 18px;
-        padding: 15px 60px;
+        padding: 11px 50px 11px 61px;
         outline: none;
         &:hover {
             cursor: pointer;
@@ -303,6 +306,7 @@ body {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-size: 18px;
+        word-spacing: 3px;
         margin: 0;
         color: $text-color;
 
@@ -338,7 +342,7 @@ body {
         }
 
         @media screen and (min-width: 600px) and (max-width: 1200px) {
-            margin: 0 auto;
+            margin: 0 auto 20px auto;
             text-align: center;
         }
 
@@ -354,7 +358,7 @@ body {
         float: left;
         width: 30px;
         height: 30px;
-        margin-right: 20px;
+        margin-right: 25px;
         &_pin {
             top: 6px;
             background: url('../images/icons.png') no-repeat 0px -2px;
@@ -370,7 +374,7 @@ body {
     &__contact-text {
         position: relative;
         float: left;
-        width: 300px;
+        width: 295px;
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-size: 16px;

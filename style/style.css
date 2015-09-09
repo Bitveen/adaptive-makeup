@@ -89,14 +89,14 @@ body {
 .footer-container {
   background-color: #1d1d1d;
   position: relative;
+  padding-top: 90px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1200px) {
   .footer-container {
-    height: 556px;
+    height: 466px;
     padding-left: 0;
     padding-right: 0;
-    padding-top: 90px;
   }
 }
 
@@ -112,13 +112,12 @@ body {
   .footer-container {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 30px;
     height: auto;
   }
 }
 
 .footer-container__header {
-  margin-bottom: 55px;
+  margin-bottom: 50px;
 }
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {
@@ -206,6 +205,7 @@ body {
 
 .contact-form__input-container_more-margin {
   margin-bottom: 15px;
+  height: 172px;
 }
 
 .contact-form__input {
@@ -217,8 +217,8 @@ body {
   font-size: 18px;
   color: #696969;
   font-weight: 400;
-  height: 50px;
-  padding: 0 20px;
+  height: 18px;
+  padding: 15px 20px;
 }
 
 .contact-form__input:focus {
@@ -248,8 +248,9 @@ body {
   font-size: 18px;
   color: #696969;
   font-weight: 400;
-  height: 170px;
-  padding: 20px;
+  width: 318px;
+  height: 130px;
+  padding: 20px 22px;
   resize: none;
 }
 
@@ -276,13 +277,14 @@ body {
 }
 
 .contact-form__button {
+  font-family: 'Raleway', sans-serif;
   background-color: #323232;
   border: 1px solid #636363;
   color: #d0d0d0;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 18px;
-  padding: 15px 60px;
+  padding: 11px 50px 11px 61px;
   outline: none;
 }
 
@@ -354,6 +356,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
+  word-spacing: 3px;
   margin: 0;
   color: #d3d3d3;
 }
@@ -407,7 +410,7 @@ body {
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {
   .contact-info__contact {
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     text-align: center;
   }
 }
@@ -424,7 +427,7 @@ body {
   float: left;
   width: 30px;
   height: 30px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
 .contact-info__contact-icon_pin {
@@ -444,7 +447,7 @@ body {
 .contact-info__contact-text {
   position: relative;
   float: left;
-  width: 300px;
+  width: 295px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
